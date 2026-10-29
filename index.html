@@ -797,20 +797,15 @@ var LZString=function(){var r=String.fromCharCode,o="ABCDEFGHIJKLMNOPQRSTUVWXYZa
 
 }());
 //Chapel's Meter Macro End</script><tw-passagedata pid="1" name="Start" tags="" position="900,400" size="100,100">Welcome to the Hotel Calgary!
-
 &lt;&lt;set $ego to 100, $maxEgo to 100&gt;&gt;
-
 &lt;&lt;link &quot;Free Dollar!&quot;&gt;&gt;
 	&lt;&lt;popover &#39;noclick&#39;&gt;&gt;[img[assets/images/cirno.png]]&lt;&lt;/popover&gt;&gt;
 &lt;&lt;/link&gt;&gt;
-
 EGO: &lt;&lt;showmeter &#39;EGO&#39; `$ego / $maxEgo`&gt;&gt;
-
 &lt;&lt;link &#39;Damage EGO&#39;&gt;&gt;
 	&lt;&lt;set $ego to Math.clamp($ego - random(10, 30), 0, $maxEgo)&gt;&gt;
     &lt;&lt;updatemeter &#39;EGO&#39; `$ego / $maxEgo`&gt;&gt;
 &lt;&lt;/link&gt;&gt;
-
 [[Move over|Second]]</tw-passagedata><tw-passagedata pid="2" name="StoryInit" tags="" position="900,250" size="100,100">&lt;&lt;set $variableTest to &quot;balls&quot;&gt;&gt;
 
 &lt;&lt;preload &#39;assets/images/cirno.png&#39;&gt;&gt;
