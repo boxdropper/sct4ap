@@ -820,7 +820,7 @@ Your Ego has run dry - GAME OVER.
 
 Please Restart using the Sidebar.</tw-passagedata><tw-passagedata pid="4" name="EgoCheck" tags="" position="1000,200" size="100,100">&lt;&lt;silently&gt;&gt;
 	&lt;&lt;repeat 1s&gt;&gt;
-    	&lt;&lt;if $ego == 0&gt;&gt;
+    	&lt;&lt;if $ego &lt;= 0&gt;&gt;
     		&lt;&lt;goto &quot;NoEgo&quot;&gt;&gt;
         	&lt;&lt;stop&gt;&gt;
     	&lt;&lt;/if&gt;&gt;
@@ -916,7 +916,7 @@ That felt good.
 		[[Snickers Bar|Corner Shop][$chocolate = true]]
         [[Can of Coke|Corner Shop][$cola = true]]
     &lt;&lt;else&gt;&gt;
-    	&lt;&lt;if $chocolate == true | $cola == true&gt;&gt;
+    	&lt;&lt;if $chocolate == true || $cola == true&gt;&gt;
         Grabbing what I want and approaching the counter, the shop owner, while ringing me up asks a question:
         &quot;So Boss, you got anything going on at home?&quot;
         [[&quot;Nothing much, why do you think I come here?&quot;|Corner Shop][$shopans1 = true]]
@@ -1108,7 +1108,7 @@ It all came flying out, like an alien organism that made me its host deciding th
 The feeling is as miserable as it sounds, my throat deciding to attempt taking revenge on me for putting it through all this.
 
 When it&#39;s all over, the only thing I feel is hate.
-&lt;&lt;set $ego to Math.clamp($ego - 45, 0, $maxEgo)&gt;&gt;
+&lt;&lt;set $ego to Math.clamp($ego - 45, -100, $maxEgo)&gt;&gt;
 &lt;&lt;updatemeter &#39;EGO&#39; `$ego / $maxEgo`&gt;&gt;
 &lt;&lt;else&gt;&gt;
 &lt;&lt;if $giveIn == true&gt;&gt;
@@ -1122,7 +1122,7 @@ Thankfully there were no witnesses.
 &lt;&lt;else&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 &lt;&lt;/if&gt;&gt;
-&lt;&lt;if $resist == true | $giveIn == true&gt;&gt;
+&lt;&lt;if $resist == true || $giveIn == true&gt;&gt;
 I pick myself back up and being walking away from the scene.
 What now?
 &lt;&lt;if $visitedShop != true&gt;&gt;
@@ -1282,7 +1282,7 @@ Looking back at my performance today...actually, should I even reflect on that?
     &lt;&lt;/if&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
-&lt;&lt;if $reflect == true | $nah == true&gt;&gt;
+&lt;&lt;if $reflect == true || $nah == true&gt;&gt;
 [[Head to Bed|Sleep]]
 &lt;&lt;else&gt;&gt;
 &lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="29" name="Sleep" tags="" position="900,2550" size="100,100">EGO: &lt;&lt;showmeter &#39;EGO&#39; `$ego / $maxEgo`&gt;&gt;
